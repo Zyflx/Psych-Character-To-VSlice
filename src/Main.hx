@@ -19,15 +19,15 @@ class Main {
 
     public static function main():Void {
         final args: Array<String> = Sys.args();
+        var fileName: String = '';
         
         if(args.length == 0)
-            closeWithMessage('ERROR: No Character JSON Specified.', 2, FALIURE);
-
-        var psychJSON: Dynamic = null;
-        var fileName: String = args[0].trim();
+            fileName = awaitInput('Psych Character JSON:');
 
         if(Path.extension(fileName) == '')
             fileName += '.json';
+
+        var psychJSON: Dynamic = null;
 
         try {
             psychJSON = Json.parse(File.getContent(fileName));
@@ -92,7 +92,9 @@ class Main {
      */
     private static function awaitInput(message: String):String {
         Sys.println(message);
-        return Sys.stdin().readLine();
+        final input: String = Sys.stdin().readLine();
+        Sys.println('');
+        return input;
     }
 
     /**
