@@ -1,0 +1,11 @@
+# Class Path Settings
+-cp src
+-main Main
+
+# Defines
+-D analyzer-optimize
+-D HAXE_OUTPUT_FILE=PsychCharToVSlice
+
+# Ouput
+--cpp output
+--cmd haxe --run PostBuild.hx
