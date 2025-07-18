@@ -19,10 +19,7 @@ class Main {
 
     public static function main():Void {
         final args: Array<String> = Sys.args();
-        var fileName: String = '';
-        
-        if(args.length == 0)
-            fileName = awaitInput('Psych Character JSON:');
+        var fileName: String = args.length == 0 ? awaitInput('Psych Character JSON:') : args[0].trim();
 
         if(Path.extension(fileName) == '')
             fileName += '.json';
