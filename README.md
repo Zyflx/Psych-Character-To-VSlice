@@ -10,3 +10,7 @@ Just run the exe and thats it lol.
 
 Do `haxe build.hxml` in the command line.
 The output executable is located in "output/bin".
+
+# Notes
+
+This converter does not support multi-sparrow psych characters.
